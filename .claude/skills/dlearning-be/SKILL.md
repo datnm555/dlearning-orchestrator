@@ -8,8 +8,9 @@ description: Use this skill when working with the dLearning backend (dlearning-b
   and the NetArchTest dependency rule. Triggers include "dlearning backend",
   "dlearning-be", "dlearning API", "login API", "register", "JWT", "alphabet API",
   "categories", "products", "colors API", "animals API", "counting", "resx",
-  "localization", "vertical slice", "EF migration", "PBKDF2", or working in the
-  dlearning-be/ directory.
+  "localization", "vertical slice", "EF migration", "PBKDF2", "auth",
+  "IStringLocalizer", "DbContext", "Npgsql", "handler", "Result pattern",
+  "seed data", or working in the dlearning-be/ directory.
 ---
 
 # dLearning Backend Skill

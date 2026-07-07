@@ -11,7 +11,7 @@ description: Use this skill for a system-wide, bird's-eye view of the dLearning
 
 # dLearning Platform Skill (system map)
 
-dLearning lets preschool students learn the Vietnamese alphabet (A→Z, 29 letters).
+dLearning teaches preschoolers through four lessons — the Vietnamese alphabet (29 letters), colors, animals, counting 1–10 — plus a catalog menu.
 Two repos, one product. This skill is the **map**; per-service detail lives in the
 service skills.
 
@@ -31,8 +31,8 @@ service skills.
 
 | Repo | Skill | Stack | Responsibility |
 |------|-------|-------|----------------|
-| `dlearning-be` | `dlearning-be` | .NET 10, EF Core 10, PostgreSQL | Auth (register/login → JWT) + alphabet data API |
-| `dlearning-web` | `dlearning-web` | Vite, React 19, TypeScript | Login/Register screens + alphabet learning UI |
+| `dlearning-be` | `dlearning-be` | .NET 10, EF Core 10, PostgreSQL | Auth (register/login → JWT) + catalog & four lesson data APIs |
+| `dlearning-web` | `dlearning-web` | Vite, React 19, TypeScript | Login/Register screens + app shell + four lesson pages |
 
 Dev remotes: `github.com/datnm555/dlearning-be`, `github.com/datnm555/dlearning-web`.
 
@@ -61,7 +61,7 @@ Dev remotes: `github.com/datnm555/dlearning-be`, `github.com/datnm555/dlearning-
 
 ```bash
 # Production-style: everything in Docker (single postgres, only :8080 exposed)
-cd orchestrator/deploy && docker compose up --build -d   # → http://localhost:8080
+cd dlearning-orchestrator/deploy && docker compose up --build -d   # → http://localhost:8080
 
 # Local dev (hot reload)
 cd dlearning-be && docker compose up -d && dotnet run --project src/Web.Api   # API :5113

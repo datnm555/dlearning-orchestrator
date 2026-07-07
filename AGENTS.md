@@ -23,13 +23,13 @@ similar agents all read from the same source.
 
 | Skill | Scope |
 |-------|-------|
-| `dlearning-be` | .NET 10 backend API: auth (register/login/JWT, PBKDF2), alphabet data, EF Core + PostgreSQL |
-| `dlearning-web` | Vite + React + TS frontend: login/register/alphabet screens, clean-architecture layers |
+| `dlearning-be` | .NET 10 backend API: auth (register/login/JWT, PBKDF2), catalog menu, four lesson slices (alphabet, colors, animals, counting), EF Core + PostgreSQL |
+| `dlearning-web` | Vite + React + TS frontend: login/register, app shell, four lesson pages, i18n, clean-architecture layers |
 | `dlearning-platform` | system-wide map: how the SPA, API and DB fit; ports; run order; skill navigation |
 
 ## Run the stack
 
 ```bash
-cd dlearning-be && docker compose up -d && dotnet run --project src/Web.Api   # API :5113 + Postgres :5432
-cd dlearning-web && npm install && npm run dev                                 # SPA :5173 (proxies /api → :5113)
+cd ../dlearning-be && docker compose up -d && dotnet run --project src/Web.Api   # API :5113 + Postgres :5432
+cd ../dlearning-web && npm install && npm run dev                                 # SPA :5173 (proxies /api → :5113)
 ```

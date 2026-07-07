@@ -11,7 +11,7 @@ repos live as siblings of this directory:
 dlearning/
 ├── dlearning-be/    # .NET 10 API (github.com/datnm555/dlearning-be) — real repo, commit here
 ├── dlearning-web/   # Vite React TS SPA (github.com/datnm555/dlearning-web) — real repo, commit here
-└── orchestrator/    # this repo: skills, routing, full-stack deploy compose
+└── dlearning-orchestrator/    # this repo: skills, routing, full-stack deploy compose
 ```
 
 **Golden rule:** edit and commit code in the sibling repos, never in copies inside the

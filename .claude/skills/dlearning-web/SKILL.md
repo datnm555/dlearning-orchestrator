@@ -10,8 +10,8 @@ description: Use this skill when working with the dLearning frontend / FE
   "dlearning fe", "dlearning-web", "React app", "app shell", "sidebar", "menu",
   "login page", "alphabet page", "colors page", "animals page", "counting page",
   "LanguageSwitcher", "useI18n", "AuthProvider", "TokenStorage", "vite proxy",
-  "lesson cards", "detail modal", "design fidelity", or working in the
-  dlearning-web/ directory.
+  "lesson cards", "detail modal", "design fidelity", "component", "router",
+  "layout", "ApiError", or working in the dlearning-web/ directory.
 ---
 
 # dLearning Frontend (Web) Skill

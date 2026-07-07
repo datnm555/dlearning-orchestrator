@@ -22,7 +22,7 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:8080
       ConnectionStrings__Database: Host=postgres;Port=5432;Database=dlearning;Username=postgres;Password=postgres
-      Jwt__Secret: dlearning-super-secret-signing-key-change-me-1234567890
+      Jwt__Secret: ${JWT_SECRET:-dlearning-super-secret-signing-key-change-me-1234567890}
       Jwt__Issuer: dlearning
       Jwt__Audience: dlearning-web
       Jwt__ExpirationInMinutes: "60"

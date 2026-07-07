@@ -3,7 +3,7 @@
 Builds the two sibling repos and Postgres into one stack.
 
 ```bash
-cd orchestrator/deploy
+cd dlearning-orchestrator/deploy
 docker compose up --build        # → http://localhost:8080
 docker compose down              # stop (add -v to wipe the DB volume)
 ```
