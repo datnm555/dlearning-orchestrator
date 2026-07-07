@@ -9,8 +9,9 @@ description: Use this skill when working with the dLearning frontend / FE
   the HttpClient + /api proxy, and Vitest tests. Triggers include "dlearning frontend",
   "dlearning fe", "dlearning-web", "React app", "app shell", "sidebar", "menu",
   "login page", "alphabet page", "colors page", "animals page", "counting page",
-  "LanguageSwitcher", "useI18n", "AuthProvider", "TokenStorage", "vite proxy", or
-  working in the dlearning-web/ directory.
+  "LanguageSwitcher", "useI18n", "AuthProvider", "TokenStorage", "vite proxy",
+  "lesson cards", "detail modal", "design fidelity", or working in the
+  dlearning-web/ directory.
 ---
 
 # dLearning Frontend (Web) Skill

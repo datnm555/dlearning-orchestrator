@@ -5,7 +5,8 @@ description: Use this skill for a system-wide, bird's-eye view of the dLearning
   repo owns what, ports, run order, and which per-service skill to load next. Triggers
   include "dlearning platform", "dlearning system", "whole system", "architecture
   overview", "how do the repos fit together", "run everything", "end to end",
-  "which skill", or any cross-repo / onboarding question about dLearning.
+  "which skill", "docker deploy", or any cross-repo / onboarding question about
+  dLearning.
 ---
 
 # dLearning Platform Skill (system map)
