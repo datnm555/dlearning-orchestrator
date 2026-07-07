@@ -8,6 +8,7 @@ similar agents all read from the same source.
 
 - **Skills**: `.claude/skills/<service>/SKILL.md` (also exposed at `.agents/skills/` via symlink for Codex).
 - **Routing**: `agent_docs/skill-routing.md` (topic→skill and directory→skill).
+- **Copilot layer**: `.github/copilot-instructions.md` + `.github/instructions/*.instructions.md` — thin pointers to the skills above, never content copies.
 - Keep workflow/pattern changes in the **skill body** so every tool stays in sync — do
   not fork content per tool; each tool only adds a thin adapter (frontmatter / call syntax).
 

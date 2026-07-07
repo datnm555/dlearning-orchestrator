@@ -49,10 +49,11 @@ Append two entries so the final file reads exactly:
 /dlearning-be/
 /dlearning-web/
 
-# Personal / OS noise
+# Personal / OS noise (`.mcp.json` holds a personal GitHub PAT — never commit it)
 .claude/settings.local.json
 .DS_Store
 .superpowers/
+.mcp.json
 ```
 
 - [ ] **Step 3: Stage everything and verify what's staged**
@@ -62,7 +63,7 @@ git add -A
 git status --short
 ```
 
-Expected: all `A ` lines. MUST include `CLAUDE.md`, `AGENTS.md`, `.agents/skills` (symlink), `.claude/skills/*/SKILL.md` (3 files), `agent_docs/skill-routing.md`, `Makefile`, `README.md`, `deploy/*`, both `HOW-TO-BUILD-AN-ORCHESTRATOR*.md`, `docs/superpowers/specs/2026-07-07-orchestrator-completion-design.md`, `docs/superpowers/plans/2026-07-07-orchestrator-completion.md`, `.gitignore`, `.mcp.json`. MUST NOT include `.claude/settings.local.json`, `dlearning-be/`, `dlearning-web/`.
+Expected: all `A ` lines. MUST include `CLAUDE.md`, `AGENTS.md`, `.agents/skills` (symlink), `.claude/skills/*/SKILL.md` (3 files), `agent_docs/skill-routing.md`, `Makefile`, `README.md`, `deploy/*`, both `HOW-TO-BUILD-AN-ORCHESTRATOR*.md`, `docs/superpowers/specs/2026-07-07-orchestrator-completion-design.md`, `docs/superpowers/plans/2026-07-07-orchestrator-completion.md`, `.gitignore`. MUST NOT include `.mcp.json` (contains a personal GitHub PAT), `.claude/settings.local.json`, `dlearning-be/`, `dlearning-web/`.
 
 - [ ] **Step 4: Verify no secret is staged**
 

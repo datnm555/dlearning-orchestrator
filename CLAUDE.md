@@ -30,7 +30,8 @@ from general knowledge when a skill exists.
 
 Full topic→skill and directory→skill tables: `agent_docs/skill-routing.md` (referenced, not
 auto-loaded). Skills are the single source of truth; `AGENTS.md` is the multi-tool backbone
-(Codex sees the same skills via the `.agents/skills` symlink).
+(Codex sees the same skills via the `.agents/skills` symlink; Copilot reads
+`.github/copilot-instructions.md` + `.github/instructions/*` — thin pointers to the skills).
 
 ## Common commands
 

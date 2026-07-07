@@ -14,6 +14,7 @@ orchestrator/
 ├── CLAUDE.md                  # thin global rules for Claude Code (loaded every session)
 ├── AGENTS.md                  # shared backbone for Codex / Copilot / Cursor / …
 ├── .agents/skills → .claude/skills   # symlink so Codex sees the same skill source
+├── .github/                   # Copilot layer: copilot-instructions.md + instructions/* (thin pointers)
 ├── agent_docs/skill-routing.md       # full topic→skill and directory→skill tables
 ├── Makefile                   # clone-all / pull-all / status / branches / list / clean
 ├── .claude/skills/
