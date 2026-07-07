@@ -1,0 +1,9 @@
+# Reference clones (pulled via `make clone-all`) — real code lives in their own repos
+/dlearning-be/
+/dlearning-web/
+
+# Personal / OS noise (`.mcp.json` holds a personal GitHub PAT — never commit it)
+.claude/settings.local.json
+.DS_Store
+.superpowers/
+.mcp.json
