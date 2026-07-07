@@ -19,7 +19,7 @@ orchestrator. Commits are authored as `datnm555 <mydatng@gmail.com>` (set per-re
 
 **Git flow (this repo):** agents are pre-authorized to commit and push straight to
 `main`, or to branch and open a PR — either is fine. Never force-push. Secret-scan the
-staged set before every commit (`git grep -E "ghp_[A-Za-z0-9]{30,}" --cached`) —
+staged set before every commit (`git grep --cached -E "ghp_[A-Za-z0-9]{30,}"`) —
 `.mcp.json` holds a personal PAT and must stay gitignored.
 
 ## The one rule
