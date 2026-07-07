@@ -12,6 +12,10 @@ via `make clone-all`) — they are read-only; never commit in them.
 **Golden rule:** edit and commit code in the real repos, never in copies inside the
 orchestrator. Commits are authored as `datnm555 <mydatng@gmail.com>` (set per-repo).
 
+**Git flow (this repo):** agents are pre-authorized to commit and push straight to
+`main`, or to branch and open a PR — either is fine. Never force-push; secret-scan
+staged changes before committing (`.mcp.json` holds a personal PAT, gitignored).
+
 ## The one rule
 
 Before answering anything about a dLearning service, **open and follow that service's

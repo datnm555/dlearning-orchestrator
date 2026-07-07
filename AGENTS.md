@@ -18,6 +18,9 @@ similar agents all read from the same source.
 - Do not answer a topic that has a skill using general knowledge — load the skill first.
 - Real code lives in the sibling repos (`dlearning-be/`, `dlearning-web/`). Commit/PR in
   the **real repo**, never in a reference clone inside this orchestrator.
+- In **this** orchestrator repo, agents are pre-authorized to commit and push to `main`
+  directly, or to branch and open a PR. Never force-push; secret-scan staged changes
+  before committing (`.mcp.json` holds a personal PAT and stays gitignored).
 
 ## Skills
 

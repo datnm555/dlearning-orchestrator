@@ -17,6 +17,11 @@ dlearning/
 **Golden rule:** edit and commit code in the sibling repos, never in copies inside the
 orchestrator. Commits are authored as `datnm555 <mydatng@gmail.com>` (set per-repo).
 
+**Git flow (this repo):** agents are pre-authorized to commit and push straight to
+`main`, or to branch and open a PR — either is fine. Never force-push. Secret-scan the
+staged set before every commit (`git grep -E "ghp_[A-Za-z0-9]{30,}" --cached`) —
+`.mcp.json` holds a personal PAT and must stay gitignored.
+
 ## The one rule
 
 Before answering anything about a dLearning service, **load its skill first** — do not answer
