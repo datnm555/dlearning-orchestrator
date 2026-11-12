@@ -1,42 +1,47 @@
 name: dlearning
 
+# Local stack: dlearning-api (.NET 10) + dlearning-web (nginx) + Postgres.
+# Only the web port is published; nginx proxies /api and /images to the api service.
 services:
   postgres:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     environment:
       POSTGRES_DB: dlearning
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - dlearning_pgdata:/var/lib/postgresql/data
+      - dlearning_pg18:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d dlearning"]
       interval: 5s
       timeout: 5s
       retries: 10
+    restart: unless-stopped
 
-  backend:
+  api:
     build:
-      context: ../../dlearning-be
+      context: ../../dlearning-api/api
+      dockerfile: src/Web.Api/Dockerfile
     environment:
-      ASPNETCORE_ENVIRONMENT: Development
+      # Demo: applies EF migrations and seeds the demo user sam / 1 on start.
+      ASPNETCORE_ENVIRONMENT: Demo
       ASPNETCORE_URLS: http://+:8080
-      ConnectionStrings__Database: Host=postgres;Port=5432;Database=dlearning;Username=postgres;Password=postgres
-      Jwt__Secret: ${JWT_SECRET:-dlearning-super-secret-signing-key-change-me-1234567890}
-      Jwt__Issuer: dlearning
-      Jwt__Audience: dlearning-web
-      Jwt__ExpirationInMinutes: "60"
+      ConnectionStrings__MainReadWrite: Host=postgres;Port=5432;Database=dlearning;Username=postgres;Password=postgres
+      # Required, no default. deploy/.env (gitignored): DLEARNING_ENCRYPTION_KEY=$(openssl rand -base64 32)
+      Encryption__Key: ${DLEARNING_ENCRYPTION_KEY:?set DLEARNING_ENCRYPTION_KEY in deploy/.env}
     depends_on:
       postgres:
         condition: service_healthy
+    restart: unless-stopped
 
-  frontend:
+  web:
     build:
       context: ../../dlearning-web
     ports:
-      - "8080:80"
+      - "${DLEARNING_WEB_PORT:-8090}:80"
     depends_on:
-      - backend
+      - api
+    restart: unless-stopped
 
 volumes:
-  dlearning_pgdata:
+  dlearning_pg18:

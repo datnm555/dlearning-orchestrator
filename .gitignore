@@ -7,3 +7,6 @@
 .DS_Store
 .superpowers/
 .mcp.json
+
+# Local deploy secrets (deploy/.env, generated per machine)
+/deploy/.env
